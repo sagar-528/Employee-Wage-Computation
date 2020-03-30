@@ -22,36 +22,40 @@ public class employeeWage implements Calculation
 	private static int maxHrsInMonth = 0;
 	ArrayList <CompanyEmpWage> employee = new ArrayList <CompanyEmpWage>();
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to Employee Wage Computation\n");
 		employeeWage ew = new employeeWage();
 		int choose;
 		System.out.println("Employee Variables are addded ");
-			do{
-				//Generate Employee rate.
-				empRatePerHour = (int) (200 + Math.random() * 300);
-		System.out.println("Employee Wage Computation\n");
+		do
+		{
+			//Generate Employee rate.
+			empRatePerHour = (int) (200 + Math.random() * 300);
+			System.out.println("Employee Wage Computation\n");
 	
-		//Generate Employee rate.
-		empRatePerHour = (int) (200 + Math.random() * 300);
+			//Generate Employee rate.
+			empRatePerHour = (int) (200 + Math.random() * 300);
+	
+			//Generate Employee working days.
+			numWorkingDays = (int) (10 + Math.random() * 15);
 
-				//Generate Employee working days.
-				numWorkingDays = (int) (10 + Math.random() * 15);
-
-				//Generate Employee work hours.
-				maxHrsInMonth = (int) (100 + Math.random() * 150);
-				ew.employee.add(new CompanyEmpWage(empRatePerHour, numWorkingDays, maxHrsInMonth));
+			//Generate Employee work hours.
+			maxHrsInMonth = (int) (100 + Math.random() * 150);
+			
+			ew.employee.add(new CompanyEmpWage(empRatePerHour, numWorkingDays, maxHrsInMonth));
 			System.out.print("Employee added, do you want to add more ?(Yes-1 : No-0): ");
 			choose = sc.nextInt();
 		}while(choose == 1);
 
-		}
-			ew.computeWage();
+	}
+		ew.computeWage();
 
 			int empNo;
-			while (true) {
+			while (true) 
+			{
 
 				System.out.println("Enter the number to fetch the total Wage of employee");
 				empNo = sc.nextInt();
@@ -147,6 +151,6 @@ class CompanyEmpWage {
 	public void setTotalEmpWage(int totalEmpWage) {
 
 		this.totalEmpWage = totalEmpWage;
-  }
+ 	}
   
 }
