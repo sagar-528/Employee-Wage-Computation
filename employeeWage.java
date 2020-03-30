@@ -49,12 +49,15 @@ public class employeeWage
 			int empCheck = ((int) Math.floor(Math.random() * 10)) % 3;
 			switch(empCheck) {
 				case IS_FULL_TIME:
+					System.out.println("Employee is present for Full time.....!");
 					empHrs = 8;
 					break;
 				case IS_PART_TIME:
+					System.out.println("Employee is present for Part time.....!");
 					empHrs = 4;
 					break;
 				default:
+					System.out.println("Employee is Abesent....!");
 					empHrs = 0;
 			}
 			totalEmpHrs += empHrs;
