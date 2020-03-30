@@ -53,6 +53,7 @@ public class employeeWage implements Calculation
 
 		for (CompanyEmpWage emp : employee)
 		{
+			System.out.println("Daily wage of employee" +empNo);
 			int empHrs = 0, empWage = 0;
 			int totalWorkingDays = 0, totalEmpHrs = 0;
 			int totalEmpWage = 0;
@@ -75,9 +76,10 @@ public class employeeWage implements Calculation
 							empHrs = 0;
 					}
 				
-				totalEmpHrs += empHrs;
-				empWage = empHrs * emp.getEmpRatePerHour();
-				totalEmpWage += empWage;
+					totalEmpHrs += empHrs;
+					empWage = empHrs * emp.getEmpRatePerHour();
+					totalEmpWage += empWage;
+					System.out.println("Day " + totalWorkingDays + ":" + empWage);
 				}
 			
 			emp.setTotalEmpWage(totalEmpWage);
@@ -93,14 +95,10 @@ class CompanyEmpWage {
 	private final int EMP_RATE_PER_HOUR, NUM_WORKING_DAYS;
 	private	final int MAX_HRS_IN_MONTH;
 
+
 	//Variables
 	private int totalEmpWage = 0;
-
-	public void setTotalEmpWage(int totalEmpWage) {
-
-		this.totalEmpWage = totalEmpWage;
-
-	}
+	private ArrayList<Integer> dailyWage = new ArrayList<Integer>();
 
 	public CompanyEmpWage(int EMP_RATE_PER_HOUR, int NUM_WORKING_DAYS, int MAX_HRS_IN_MONTH) {
 
@@ -128,4 +126,8 @@ class CompanyEmpWage {
 
 	}
 
+	public void addDailywage(int wage){
+
+		dailyWage.add(wage);
+	}
 }
