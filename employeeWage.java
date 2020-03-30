@@ -4,6 +4,7 @@
 
 import java.util.*;
 
+
 //interface for method computeWage
 interface Calculation{
 
@@ -16,7 +17,6 @@ public class employeeWage implements Calculation
 
 	//CONSTANTS
 	private static final int IS_FULL_TIME = 1, IS_PART_TIME = 2;
-
 	//Variables
 	private static int empRatePerHour = 0, numWorkingDays = 0;
 	private static int maxHrsInMonth = 0;
@@ -32,18 +32,22 @@ public class employeeWage implements Calculation
 			do{
 				//Generate Employee rate.
 				empRatePerHour = (int) (200 + Math.random() * 300);
+		System.out.println("Employee Wage Computation\n");
+	
+		//Generate Employee rate.
+		empRatePerHour = (int) (200 + Math.random() * 300);
 
 				//Generate Employee working days.
 				numWorkingDays = (int) (10 + Math.random() * 15);
 
 				//Generate Employee work hours.
 				maxHrsInMonth = (int) (100 + Math.random() * 150);
-
 				ew.employee.add(new CompanyEmpWage(empRatePerHour, numWorkingDays, maxHrsInMonth));
 			System.out.print("Employee added, do you want to add more ?(Yes-1 : No-0): ");
 			choose = sc.nextInt();
 		}while(choose == 1);
 
+		}
 			ew.computeWage();
 
 			int empNo;
@@ -143,6 +147,6 @@ class CompanyEmpWage {
 	public void setTotalEmpWage(int totalEmpWage) {
 
 		this.totalEmpWage = totalEmpWage;
-
-	}
+  }
+  
 }
