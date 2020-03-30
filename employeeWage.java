@@ -2,12 +2,12 @@
 //#->Author: Sagar Gupta 
 //#->Date: Mar 2020 
 
-public class EmpWage 
+public class employeeWage 
 {
 
 	//CONSTANTS
 	private static final int IS_FULL_TIME = 1, IS_PART_TIME = 2;
-	private static final int TOTAL_COMPANIES = 10;
+	private static final int TOTAL_COMPANIES = 8;
 
 	//Variables
 	private static int empRatePerHour = 0, numWorkingDays = 0;
@@ -15,7 +15,7 @@ public class EmpWage
 
 	public static void main(String[] args) {
 
-		System.out.println("Welcome to Employee Wage Computation\n");
+		System.out.println("Employee Wage Computation\n");
 	
 		//Generate Employee rate.
 		empRatePerHour = (int) (200 + Math.random() * 300);
