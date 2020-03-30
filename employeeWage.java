@@ -2,6 +2,7 @@
 //#->Author: Sagar Gupta 
 //#->Date: Mar 2020 
 
+
 //interface for method computeWage
 interface Calculation{
 
@@ -20,7 +21,6 @@ public class employeeWage implements Calculation
 
 		this.TOTAL_COMPANIES = TOTAL_COMPANIES;
 		this.employee = new CompanyEmpWage [this.TOTAL_COMPANIES];
-	}
 
 	//Variables
 	private static int empRatePerHour = 0, numWorkingDays = 0;
@@ -28,22 +28,23 @@ public class employeeWage implements Calculation
 	CompanyEmpWage employee[];
 
 	public static void main(String[] args) {
-
 		System.out.println("Welcome to Employee Wage Computation\n");
 		employeeWage ew = new employeeWage(10);
 			for (int counter = 0; counter < ew.employee.length; counter++)
 			{
 				//Generate Employee rate.
 				empRatePerHour = (int) (200 + Math.random() * 300);
+		System.out.println("Employee Wage Computation\n");
+	
+		//Generate Employee rate.
+		empRatePerHour = (int) (200 + Math.random() * 300);
 
 				//Generate Employee working days.
 				numWorkingDays = (int) (10 + Math.random() * 15);
 
 				//Generate Employee work hours.
 				maxHrsInMonth = (int) (100 + Math.random() * 150);
-
 			}
-
 			ew.computeWage();
 	}
 
