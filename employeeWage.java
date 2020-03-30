@@ -49,6 +49,21 @@ public class employeeWage implements Calculation
 
 		}
 			ew.computeWage();
+
+			int empNo;
+			while (true) {
+
+				System.out.println("Enter the number to fetch the total Wage of employee");
+				empNo = sc.nextInt();
+				if(empNo > 0 && empNo <= ew.employee.length)
+				{
+					System.out.print("Total wage of employee = ");
+	 				System.out.println(ew.employee.get(empNo - 1).setTotalEmpWage());
+	 				break;
+				}
+				else
+					System.out.println("Invalid employee number");
+			}
 	}
 
 	//Calculates employee wage
@@ -57,7 +72,7 @@ public class employeeWage implements Calculation
 
 		for (CompanyEmpWage emp : employee)
 		{
-			System.out.println("Daily wage of employee" +empNo);
+			System.out.println("Daily wage of employee" + empNo);
 			int empHrs = 0, empWage = 0;
 			int totalWorkingDays = 0, totalEmpHrs = 0;
 			int totalEmpWage = 0;
@@ -87,7 +102,6 @@ public class employeeWage implements Calculation
 				}
 			
 			emp.setTotalEmpWage(totalEmpWage);
- 			System.out.println("Monthly Wage of employee " + (empNo + 1) + ":" + totalEmpWage);
  			empNo++;
  		}
 	}
@@ -130,10 +144,9 @@ class CompanyEmpWage {
 
 	}
 
+	public void setTotalEmpWage(int totalEmpWage) {
 
-	public void addDailywage(int wage){
-
-		dailyWage.add(wage);
-	}
-
+		this.totalEmpWage = totalEmpWage;
+  }
+  
 }
