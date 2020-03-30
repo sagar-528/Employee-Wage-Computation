@@ -28,8 +28,7 @@ public class employeeWage
 
 		CompanyEmpWage employee[] = new CompanyEmpWage [TOTAL_COMPANIES];
 		for (int counter = 0; counter < TOTAL_COMPANIES; counter++) {
-			employee[counter] = new CompanyEmpWage(empRatePerHour, numWorkingDays,
-											 maxHrsInMonth);
+			employee[counter] = new CompanyEmpWage(empRatePerHour, numWorkingDays, maxHrsInMonth);
 			computeEmpWage(employee[counter], counter);
 		}
 
